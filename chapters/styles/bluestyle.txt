@@ -1,0 +1,4 @@
+axes.prop_cycle: cycler("color", ["#003366", "#0055AA", "#339CFF", "#99CCFF", "#E6F2FF"])
+figure.facecolor: white
+axes.facecolor: white
+grid.color: "#DDDDDD"

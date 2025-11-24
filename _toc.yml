@@ -1,0 +1,17 @@
+format: jb-book
+root: README
+options:  # The options key will be applied to all chapters, but not sub-sections
+  numbered: true
+parts:
+- caption: Foundation Technical Skills
+  chapters:
+  - file: chapters/math
+  - file: chapters/programming
+- caption: Applied Data Science Skills
+  chapters:
+  - file: chapters/da
+  - file: chapters/visualization
+  - file: chapters/ml
+- caption: AI-Enhanced Interaction Skills
+  chapters:
+  - file: chapters/prompt
