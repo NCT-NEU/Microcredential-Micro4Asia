@@ -1,0 +1,1740 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hàm range() &#8212; An Integrated Data Science Skill Pathway for Solving Real-World Problems in Economics and Business</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/test';</script>
+    <link rel="canonical" href="https://nct-neu.github.io/Microcredential-Micro4Asia/chapters/test.html" />
+    <link rel="icon" href="../_static/favicon2.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logoNeu.jpg" class="logo__image only-light" alt="An Integrated Data Science Skill Pathway for Solving Real-World Problems in Economics and Business - Home"/>
+    <script>document.write(`<img src="../_static/logoNeu.jpg" class="logo__image only-dark" alt="An Integrated Data Science Skill Pathway for Solving Real-World Problems in Economics and Business - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    An integrated data science skills
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundation Technical Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="math.html">Mathematical Foundations for Data Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming.html">Python programming for data science</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applied Data Science Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="da.html">Data cleaning and preprocessing with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Data visualization for business insights</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml.html">Applied machine learning in economics and business</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AI-Enhanced Interaction Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="prompt.html">Prompt engineering</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/NCT-NEU/Microcredential-Micro4Asia" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/test.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hàm range()</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hàm <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cau-lenh-break-va-continue">Câu lệnh <code class="docutils literal notranslate"><span class="pre">break</span></code> và <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vong-lap-for-long-nhau">Vòng lặp <code class="docutils literal notranslate"><span class="pre">for</span></code> lồng nhau</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vong-lap-while">2. Vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vong-lap-while-co-ban">Vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code> cơ bản</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vong-lap-vo-han">Vòng lặp vô hạn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#else-voi-vong-lap-while"><code class="docutils literal notranslate"><span class="pre">else</span></code> với vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bieu-thuc-tap-hop-comprehensions">3. Biểu thức tập hợp (Comprehensions)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bieu-thuc-tap-hop-danh-sach">Biểu thức tập hợp danh sách</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bieu-thuc-tap-hop-tu-dien">Biểu thức tập hợp từ điển</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bieu-thuc-tap-hop-tap-hop">Biểu thức tập hợp tập hợp</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">4. <code class="docutils literal notranslate"><span class="pre">try</span></code> / <code class="docutils literal notranslate"><span class="pre">except</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xu-ly-ngoai-le-co-ban">Xử lý ngoại lệ cơ bản</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#else-va-finally"><code class="docutils literal notranslate"><span class="pre">else</span></code> và <code class="docutils literal notranslate"><span class="pre">finally</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ham">5. Hàm</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dinh-nghia-ham">Định nghĩa hàm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tham-so-va-doi-so">Tham số và Đối số</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doi-so-mac-dinh">Đối số mặc định</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doi-so-tu-khoa">Đối số từ khóa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doi-so-tuy-y-args-va-kwargs">Đối số tùy ý (<code class="docutils literal notranslate"><span class="pre">*args</span></code> và <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kieu-du-lieu-tra-ve">Kiểu dữ liệu trả về</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-nhu-mot-kieu-du-lieu">6. Hàm như một kiểu dữ liệu</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gan-ham-cho-bien">Gán hàm cho biến</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truyen-ham-lam-doi-so">Truyền hàm làm đối số</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tra-ve-ham-tu-mot-ham-khac">Trả về hàm từ một hàm khác</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goi-y-kieu-du-lieu-type-hinting">Gợi ý kiểu dữ liệu (Type Hinting)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tai-sao-nen-su-dung-goi-y-kieu-du-lieu">Tại sao nên sử dụng gợi ý kiểu dữ liệu?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-du-nang-cao-ve-goi-y-kieu-du-lieu">Ví dụ nâng cao về gợi ý kiểu dữ liệu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><img alt="" src="../_images/banner.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kết nối tới file Chinook</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;data/Chinook_Sqlite.sqlite&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Truy vấn SQL</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM MediaType&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MediaTypeId</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>MPEG audio file</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Protected AAC audio file</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Protected MPEG-4 video file</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Purchased AAC audio file</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>AAC audio file</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">vnstock</span><span class="w"> </span><span class="kn">import</span> <span class="n">Vnstock</span>
+<span class="n">stock</span> <span class="o">=</span> <span class="n">Vnstock</span><span class="p">()</span><span class="o">.</span><span class="n">stock</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;VCB&#39;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;VCI&#39;</span><span class="p">)</span>
+<span class="n">stock</span><span class="o">.</span><span class="n">quote</span><span class="o">.</span><span class="n">history</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2024-05-25&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<h2 class="rubric" id="chao-mung-ban-den-voi-vnstock">👋 Chào mừng bạn đến với Vnstock!</h2>
+<p>Cảm ơn bạn đã sử dụng package phân tích chứng khoán #1 tại Việt Nam</p>
+<ul class="simple">
+<li><p>Tài liệu: <a class="reference external" href="https://vnstocks.com/docs/category/s%E1%BB%95-tay-h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn">Sổ tay hướng dẫn</a></p></li>
+<li><p>Cộng đồng: <a class="reference external" href="https://www.facebook.com/groups/vnstock.official">Nhóm Facebook</a></p></li>
+</ul>
+<p>Khám phá các tính năng mới nhất và tham gia cộng đồng để nhận hỗ trợ.</p>
+<p>Phiên bản Vnstock 3.3.0 đã có mặt, vui lòng cập nhật với câu lệnh : <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">vnstock</span> <span class="pre">--upgrade</span></code>.
+Lịch sử phiên bản: https://vnstocks.com/docs/tai-lieu/lich-su-phien-ban
+Phiên bản hiện tại 3.2.6</p>
+<p>Phiên bản Vnai 2.2.3 đã có mặt, vui lòng cập nhật với câu lệnh : <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">vnai</span> <span class="pre">--upgrade</span></code>.
+Lịch sử phiên bản: https://pypi.org/project/vnai/#history
+Phiên bản hiện tại 2.0.4</p>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>open</th>
+      <th>high</th>
+      <th>low</th>
+      <th>close</th>
+      <th>volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-01-02</td>
+      <td>38.95</td>
+      <td>39.47</td>
+      <td>38.73</td>
+      <td>39.21</td>
+      <td>386290</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-01-03</td>
+      <td>39.51</td>
+      <td>39.64</td>
+      <td>38.82</td>
+      <td>38.82</td>
+      <td>536130</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-01-06</td>
+      <td>38.52</td>
+      <td>38.65</td>
+      <td>37.78</td>
+      <td>37.78</td>
+      <td>880110</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-01-07</td>
+      <td>37.57</td>
+      <td>37.95</td>
+      <td>36.87</td>
+      <td>37.91</td>
+      <td>1013270</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-01-08</td>
+      <td>37.52</td>
+      <td>37.95</td>
+      <td>37.22</td>
+      <td>37.57</td>
+      <td>722280</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1090</th>
+      <td>2024-05-20</td>
+      <td>61.29</td>
+      <td>61.76</td>
+      <td>60.96</td>
+      <td>61.03</td>
+      <td>1045431</td>
+    </tr>
+    <tr>
+      <th>1091</th>
+      <td>2024-05-21</td>
+      <td>61.03</td>
+      <td>61.10</td>
+      <td>60.23</td>
+      <td>60.50</td>
+      <td>1488654</td>
+    </tr>
+    <tr>
+      <th>1092</th>
+      <td>2024-05-22</td>
+      <td>60.76</td>
+      <td>60.90</td>
+      <td>60.23</td>
+      <td>60.23</td>
+      <td>1349994</td>
+    </tr>
+    <tr>
+      <th>1093</th>
+      <td>2024-05-23</td>
+      <td>60.23</td>
+      <td>60.76</td>
+      <td>60.10</td>
+      <td>60.43</td>
+      <td>1318403</td>
+    </tr>
+    <tr>
+      <th>1094</th>
+      <td>2024-05-24</td>
+      <td>60.43</td>
+      <td>60.43</td>
+      <td>59.77</td>
+      <td>59.90</td>
+      <td>2243441</td>
+    </tr>
+  </tbody>
+</table>
+<p>1095 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">company</span> <span class="o">=</span> <span class="n">Vnstock</span><span class="p">()</span><span class="o">.</span><span class="n">stock</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;ACB&#39;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;VCI&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">company</span>
+<span class="n">company</span><span class="o">.</span><span class="n">overview</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>symbol</th>
+      <th>id</th>
+      <th>issue_share</th>
+      <th>history</th>
+      <th>company_profile</th>
+      <th>icb_name3</th>
+      <th>icb_name2</th>
+      <th>icb_name4</th>
+      <th>financial_ratio_issue_share</th>
+      <th>charter_capital</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ACB</td>
+      <td>67505</td>
+      <td>5136656599</td>
+      <td>- Ngày 24/04/1993: Ngân hàng Thương mại Cổ ph...</td>
+      <td>Ngân hàng Thương mại Cổ phần Á Châu (ACB) được...</td>
+      <td>Ngân hàng</td>
+      <td>Ngân hàng</td>
+      <td>Ngân hàng</td>
+      <td>5136656599</td>
+      <td>51366565990000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">vnstock.explorer.misc</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># VCB exchange rate</span>
+<span class="n">vcb_exchange_rate</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s1">&#39;2025-06-16&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>currency_code</th>
+      <th>currency_name</th>
+      <th>buy _cash</th>
+      <th>buy _transfer</th>
+      <th>sell</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>AUD</td>
+      <td>AUSTRALIAN DOLLAR</td>
+      <td>16,484.97</td>
+      <td>16,651.48</td>
+      <td>17,184.95</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CAD</td>
+      <td>CANADIAN DOLLAR</td>
+      <td>18,712.40</td>
+      <td>18,901.41</td>
+      <td>19,506.96</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CHF</td>
+      <td>SWISS FRANC</td>
+      <td>31,311.71</td>
+      <td>31,627.99</td>
+      <td>32,641.27</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CNY</td>
+      <td>CHINESE YUAN</td>
+      <td>3,540.13</td>
+      <td>3,575.89</td>
+      <td>3,690.46</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>DKK</td>
+      <td>DANISH KRONE</td>
+      <td>-</td>
+      <td>3,960.74</td>
+      <td>4,112.24</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>EUR</td>
+      <td>EURO</td>
+      <td>29,322.99</td>
+      <td>29,619.19</td>
+      <td>30,869.27</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>GBP</td>
+      <td>UK POUND STERLING</td>
+      <td>34,444.98</td>
+      <td>34,792.91</td>
+      <td>35,907.58</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>HKD</td>
+      <td>HONG KONG DOLLAR</td>
+      <td>3,231.12</td>
+      <td>3,263.76</td>
+      <td>3,388.60</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>INR</td>
+      <td>INDIAN RUPEE</td>
+      <td>-</td>
+      <td>301.46</td>
+      <td>314.44</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>JPY</td>
+      <td>JAPANESE YEN</td>
+      <td>174.38</td>
+      <td>176.14</td>
+      <td>185.46</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>KRW</td>
+      <td>KOREAN WON</td>
+      <td>16.56</td>
+      <td>18.40</td>
+      <td>19.96</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>KWD</td>
+      <td>KUWAITI DINAR</td>
+      <td>-</td>
+      <td>84,832.46</td>
+      <td>88,484.33</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>MYR</td>
+      <td>MALAYSIAN RINGGIT</td>
+      <td>-</td>
+      <td>6,084.30</td>
+      <td>6,216.74</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>NOK</td>
+      <td>NORWEGIAN KRONE</td>
+      <td>-</td>
+      <td>2,579.69</td>
+      <td>2,689.10</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>RUB</td>
+      <td>RUSSIAN RUBLE</td>
+      <td>-</td>
+      <td>311.64</td>
+      <td>344.98</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>SAR</td>
+      <td>SAUDI ARABIAN RIYAL</td>
+      <td>-</td>
+      <td>6,914.53</td>
+      <td>7,212.19</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>SEK</td>
+      <td>SWEDISH KRONA</td>
+      <td>-</td>
+      <td>2,687.87</td>
+      <td>2,801.87</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>SGD</td>
+      <td>SINGAPORE DOLLAR</td>
+      <td>19,813.35</td>
+      <td>20,013.48</td>
+      <td>20,696.02</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>THB</td>
+      <td>THAI BAHT</td>
+      <td>709.15</td>
+      <td>787.94</td>
+      <td>821.36</td>
+      <td>2025-06-16</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>USD</td>
+      <td>US DOLLAR</td>
+      <td>25,852.00</td>
+      <td>25,882.00</td>
+      <td>26,242.00</td>
+      <td>2025-06-16</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="ham-range">
+<h1>Hàm <code class="docutils literal notranslate"><span class="pre">range()</span></code><a class="headerlink" href="#ham-range" title="Link to this heading">#</a></h1>
+<p>Hàm <code class="docutils literal notranslate"><span class="pre">range()</span></code> được sử dụng để tạo một chuỗi số. Nó thường được sử dụng với vòng lặp <code class="docutils literal notranslate"><span class="pre">for</span></code> để lặp lại một số lần nhất định.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">range(stop)</span></code>: Tạo một chuỗi số từ 0 đến <code class="docutils literal notranslate"><span class="pre">stop</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop)</span></code>: Tạo một chuỗi số từ <code class="docutils literal notranslate"><span class="pre">start</span></code> đến <code class="docutils literal notranslate"><span class="pre">stop</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code>: Tạo một chuỗi số từ <code class="docutils literal notranslate"><span class="pre">start</span></code> đến <code class="docutils literal notranslate"><span class="pre">stop</span> <span class="pre">-</span> <span class="pre">1</span></code> với bước nhảy <code class="docutils literal notranslate"><span class="pre">step</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lặp lại 5 lần (từ 0 đến 4)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># Lặp từ 2 đến 5</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># Lặp từ 0 đến 9 với bước nhảy 2</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+2
+3
+4
+5
+0
+2
+4
+6
+8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cau-lenh-break-va-continue">
+<h1>Câu lệnh <code class="docutils literal notranslate"><span class="pre">break</span></code> và <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#cau-lenh-break-va-continue" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code>: Dừng vòng lặp hiện tại.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">continue</span></code>: Bỏ qua lần lặp hiện tại và chuyển sang lần lặp tiếp theo.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sử dụng break</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># Sẽ in từ 0 đến 4</span>
+
+<span class="c1"># Sử dụng continue</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Bỏ qua số chẵn</span>
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># Sẽ in số lẻ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+1
+3
+5
+7
+9
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="vong-lap-for-long-nhau">
+<h1>Vòng lặp <code class="docutils literal notranslate"><span class="pre">for</span></code> lồng nhau<a class="headerlink" href="#vong-lap-for-long-nhau" title="Link to this heading">#</a></h1>
+<p>Bạn có thể đặt một vòng lặp <code class="docutils literal notranslate"><span class="pre">for</span></code> bên trong một vòng lặp <code class="docutils literal notranslate"><span class="pre">for</span></code> khác.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;i: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">, j: </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i: 0, j: 0
+i: 0, j: 1
+i: 1, j: 0
+i: 1, j: 1
+i: 2, j: 0
+i: 2, j: 1
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="vong-lap-while">
+<h1>2. Vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#vong-lap-while" title="Link to this heading">#</a></h1>
+<p>Vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code> thực thi một khối mã miễn là một điều kiện nhất định là đúng.</p>
+<section id="vong-lap-while-co-ban">
+<h2>Vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code> cơ bản<a class="headerlink" href="#vong-lap-while-co-ban" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="vong-lap-vo-han">
+<h2>Vòng lặp vô hạn<a class="headerlink" href="#vong-lap-vo-han" title="Link to this heading">#</a></h2>
+<p>Một vòng lặp vô hạn xảy ra khi điều kiện của vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code> luôn đúng. Cần cẩn thận để tránh chúng trừ khi bạn có một lý do cụ thể để sử dụng (ví dụ: một máy chủ đang lắng nghe các kết nối).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ví dụ về vòng lặp vô hạn (chạy đoạn mã này sẽ khiến chương trình không dừng)</span>
+<span class="c1"># while True:</span>
+<span class="c1">#     print(&quot;Vòng lặp vô hạn&quot;)</span>
+<span class="c1">#     # Để dừng, bạn sẽ cần ngắt thủ công (ví dụ: Ctrl+C)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="else-voi-vong-lap-while">
+<h2><code class="docutils literal notranslate"><span class="pre">else</span></code> với vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#else-voi-vong-lap-while" title="Link to this heading">#</a></h2>
+<p>Câu lệnh <code class="docutils literal notranslate"><span class="pre">else</span></code> trong vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code> sẽ được thực thi khi điều kiện của vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code> trở thành <code class="docutils literal notranslate"><span class="pre">False</span></code>. Nó KHÔNG được thực thi nếu vòng lặp bị dừng bởi một câu lệnh <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trong vòng lặp: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vòng lặp hoàn tất&quot;</span><span class="p">)</span>
+
+<span class="c1"># Ví dụ với break</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trong vòng lặp (với break): </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vòng lặp hoàn tất (không được thực thi)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Trong vòng lặp: 0
+Trong vòng lặp: 1
+Trong vòng lặp: 2
+Vòng lặp hoàn tất
+Trong vòng lặp (với break): 0
+Trong vòng lặp (với break): 1
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+<section id="bieu-thuc-tap-hop-comprehensions">
+<h1>3. Biểu thức tập hợp (Comprehensions)<a class="headerlink" href="#bieu-thuc-tap-hop-comprehensions" title="Link to this heading">#</a></h1>
+<p>Biểu thức tập hợp cung cấp một cách ngắn gọn để tạo danh sách, từ điển và tập hợp.</p>
+<section id="bieu-thuc-tap-hop-danh-sach">
+<h2>Biểu thức tập hợp danh sách<a class="headerlink" href="#bieu-thuc-tap-hop-danh-sach" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tạo danh sách các số bình phương</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
+
+<span class="c1"># Lọc danh sách</span>
+<span class="n">even_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">even_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+[0, 2, 4, 6, 8]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bieu-thuc-tap-hop-tu-dien">
+<h2>Biểu thức tập hợp từ điển<a class="headerlink" href="#bieu-thuc-tap-hop-tu-dien" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tạo từ điển từ danh sách các cặp</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
+
+<span class="c1"># Chuyển đổi danh sách các tuple thành từ điển</span>
+<span class="n">list_of_tuples</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+<span class="n">dict_from_tuples</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">list_of_tuples</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dict_from_tuples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+{&#39;a&#39;: 1, &#39;b&#39;: 2}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bieu-thuc-tap-hop-tap-hop">
+<h2>Biểu thức tập hợp tập hợp<a class="headerlink" href="#bieu-thuc-tap-hop-tap-hop" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tạo tập hợp các số bình phương duy nhất</span>
+<span class="n">unique_squares</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">unique_squares</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 4, 9}
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+<section id="try-except">
+<h1>4. <code class="docutils literal notranslate"><span class="pre">try</span></code> / <code class="docutils literal notranslate"><span class="pre">except</span></code><a class="headerlink" href="#try-except" title="Link to this heading">#</a></h1>
+<p>Khối <code class="docutils literal notranslate"><span class="pre">try</span></code> / <code class="docutils literal notranslate"><span class="pre">except</span></code> được sử dụng để xử lý lỗi (ngoại lệ) trong Python. Nó cho phép bạn thử một khối mã và nếu một lỗi xảy ra, hãy thực hiện một hành động cụ thể thay vì làm hỏng chương trình.</p>
+<section id="xu-ly-ngoai-le-co-ban">
+<h2>Xử lý ngoại lệ cơ bản<a class="headerlink" href="#xu-ly-ngoai-le-co-ban" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chia cho 0</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Đã xảy ra lỗi chia cho 0!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Lỗi giá trị</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Đã xảy ra lỗi giá trị không hợp lệ!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Xử lý ngoại lệ tổng quát</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Một lỗi không xác định đã xảy ra.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Đã xảy ra lỗi chia cho 0!
+Đã xảy ra lỗi giá trị không hợp lệ!
+Một lỗi không xác định đã xảy ra.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="else-va-finally">
+<h2><code class="docutils literal notranslate"><span class="pre">else</span></code> và <code class="docutils literal notranslate"><span class="pre">finally</span></code><a class="headerlink" href="#else-va-finally" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code>: Khối mã này được thực thi nếu khối <code class="docutils literal notranslate"><span class="pre">try</span></code> KHÔNG gây ra bất kỳ ngoại lệ nào.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">finally</span></code>: Khối mã này LUÔN được thực thi, bất kể có ngoại lệ nào xảy ra hay không. Nó thường được sử dụng cho các hoạt động dọn dẹp (ví dụ: đóng file).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ví dụ với else và finally</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">5</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Đã xảy ra lỗi chia cho 0!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kết quả là: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Khối finally đã được thực thi.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Ví dụ với ngoại lệ và finally</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Đã xảy ra lỗi chia cho 0!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kết quả là: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># Sẽ không được thực thi</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Khối finally đã được thực thi.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kết quả là: 2.0
+Khối finally đã được thực thi.
+
+---
+Đã xảy ra lỗi chia cho 0!
+Khối finally đã được thực thi.
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+<section id="ham">
+<h1>5. Hàm<a class="headerlink" href="#ham" title="Link to this heading">#</a></h1>
+<p>Hàm là một khối mã được tổ chức, có thể tái sử dụng, được sử dụng để thực hiện một hành động liên quan duy nhất. Hàm cung cấp khả năng mô đun hóa cao hơn cho ứng dụng của bạn và khả năng tái sử dụng mã.</p>
+<section id="dinh-nghia-ham">
+<h2>Định nghĩa hàm<a class="headerlink" href="#dinh-nghia-ham" title="Link to this heading">#</a></h2>
+<p>Hàm được định nghĩa bằng từ khóa <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hàm đơn giản không có tham số</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Hàm với tham số</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">greet_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Hàm có giá trị trả về</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># Gọi hàm</span>
+<span class="n">greet_name</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+<span class="n">greet_name</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">)</span>
+
+<span class="n">sum_result</span> <span class="o">=</span> <span class="n">add_numbers</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;10 + 5 = </span><span class="si">{</span><span class="n">sum_result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, Alice!
+Hello, Bob!
+10 + 5 = 15
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tham-so-va-doi-so">
+<h2>Tham số và Đối số<a class="headerlink" href="#tham-so-va-doi-so" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Tham số:</strong> Các tên được liệt kê bên trong dấu ngoặc đơn trong định nghĩa hàm.</p></li>
+<li><p><strong>Đối số:</strong> Các giá trị được truyền vào hàm khi nó được gọi.</p></li>
+</ul>
+<section id="doi-so-mac-dinh">
+<h3>Đối số mặc định<a class="headerlink" href="#doi-so-mac-dinh" title="Link to this heading">#</a></h3>
+<p>Bạn có thể cung cấp các giá trị mặc định cho các tham số. Nếu một đối số không được cung cấp cho một tham số có giá trị mặc định, giá trị mặc định sẽ được sử dụng.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">greet_default</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;World&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="n">greet_default</span><span class="p">()</span> <span class="c1"># Sử dụng giá trị mặc định</span>
+<span class="n">greet_default</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">)</span> <span class="c1"># Ghi đè giá trị mặc định</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, World!
+Hello, Python!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="doi-so-tu-khoa">
+<h3>Đối số từ khóa<a class="headerlink" href="#doi-so-tu-khoa" title="Link to this heading">#</a></h3>
+<p>Bạn có thể gọi hàm bằng cách sử dụng các đối số từ khóa, trong đó bạn chỉ định tên tham số khi truyền đối số. Điều này cho phép bạn truyền đối số theo bất kỳ thứ tự nào.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_info</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, Age: </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">print_info</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">print_info</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Bob&quot;</span><span class="p">)</span> <span class="c1"># Thứ tự không quan trọng với đối số từ khóa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: Alice, Age: 30
+Name: Bob, Age: 25
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="doi-so-tuy-y-args-va-kwargs">
+<h3>Đối số tùy ý (<code class="docutils literal notranslate"><span class="pre">*args</span></code> và <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>)<a class="headerlink" href="#doi-so-tuy-y-args-va-kwargs" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*args</span></code> (non-keyword arguments): Cho phép một hàm chấp nhận một số lượng đối số không xác định dưới dạng một tuple.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> (keyword arguments): Cho phép một hàm chấp nhận một số lượng đối số từ khóa không xác định dưới dạng một từ điển.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func_with_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Args: </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">func_with_args</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">func_with_args</span><span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;cherry&#39;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">func_with_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kwargs: </span><span class="si">{</span><span class="n">kwargs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">func_with_kwargs</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">func_with_kwargs</span><span class="p">(</span><span class="n">city</span><span class="o">=</span><span class="s2">&quot;New York&quot;</span><span class="p">,</span> <span class="nb">zip</span><span class="o">=</span><span class="s2">&quot;10001&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Args: (1, 2, 3)
+Args: (&#39;apple&#39;, &#39;banana&#39;, &#39;cherry&#39;)
+Kwargs: {&#39;name&#39;: &#39;Alice&#39;, &#39;age&#39;: 30}
+Kwargs: {&#39;city&#39;: &#39;New York&#39;, &#39;zip&#39;: &#39;10001&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="kieu-du-lieu-tra-ve">
+<h2>Kiểu dữ liệu trả về<a class="headerlink" href="#kieu-du-lieu-tra-ve" title="Link to this heading">#</a></h2>
+<p>Hàm có thể trả về một giá trị bằng cách sử dụng câu lệnh <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="n">calculate_sum</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tổng là: </span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_greeting</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="n">get_greeting</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tổng là: 15
+Hello, John!
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+<section id="ham-nhu-mot-kieu-du-lieu">
+<h1>6. Hàm như một kiểu dữ liệu<a class="headerlink" href="#ham-nhu-mot-kieu-du-lieu" title="Link to this heading">#</a></h1>
+<p>Trong Python, hàm là các đối tượng “first-class citizens”, có nghĩa là chúng có thể được xử lý giống như bất kỳ kiểu dữ liệu nào khác (ví dụ: số nguyên, chuỗi ký tự, danh sách). Điều này mở ra nhiều khả năng mạnh mẽ.</p>
+<section id="gan-ham-cho-bien">
+<h2>Gán hàm cho biến<a class="headerlink" href="#gan-ham-cho-bien" title="Link to this heading">#</a></h2>
+<p>Bạn có thể gán một hàm cho một biến và sau đó gọi hàm thông qua biến đó.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func1</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello from func1!&quot;</span><span class="p">)</span>
+
+<span class="n">my_func</span> <span class="o">=</span> <span class="n">func1</span>
+<span class="n">my_func</span><span class="p">()</span> <span class="c1"># Gọi hàm thông qua biến</span>
+<span class="n">func1</span><span class="p">()</span> <span class="c1"># Gọi hàm gốc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello from func1!
+Hello from func1!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="truyen-ham-lam-doi-so">
+<h2>Truyền hàm làm đối số<a class="headerlink" href="#truyen-ham-lam-doi-so" title="Link to this heading">#</a></h2>
+<p>Hàm có thể được truyền làm đối số cho các hàm khác. Đây là một khái niệm cơ bản trong lập trình hàm và tạo ra các hàm bậc cao (higher-order functions).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">subtract</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">perform_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">operation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Thực hiện hoạt động </span><span class="si">{</span><span class="n">operation</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">perform_operation</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">perform_operation</span><span class="p">(</span><span class="n">subtract</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thực hiện hoạt động add: 5
+Thực hiện hoạt động subtract: -1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tra-ve-ham-tu-mot-ham-khac">
+<h2>Trả về hàm từ một hàm khác<a class="headerlink" href="#tra-ve-ham-tu-mot-ham-khac" title="Link to this heading">#</a></h2>
+<p>Một hàm có thể trả về một hàm khác. Điều này thường được sử dụng trong các closure và decorator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">create_greeter</span><span class="p">(</span><span class="n">greeting</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">greeter</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">greeting</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+    <span class="k">return</span> <span class="n">greeter</span>
+
+<span class="n">say_hello</span> <span class="o">=</span> <span class="n">create_greeter</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="n">say_hi</span> <span class="o">=</span> <span class="n">create_greeter</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">say_hello</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">say_hello</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, Alice!
+Hello, Bob!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="goi-y-kieu-du-lieu-type-hinting">
+<h2>Gợi ý kiểu dữ liệu (Type Hinting)<a class="headerlink" href="#goi-y-kieu-du-lieu-type-hinting" title="Link to this heading">#</a></h2>
+<p>Gợi ý kiểu dữ liệu là một tính năng trong Python cho phép bạn chỉ định kiểu dữ liệu mong muốn cho các biến, tham số hàm và giá trị trả về. Mặc dù Python vẫn là một ngôn ngữ được gõ động (dynamically typed), gợi ý kiểu dữ liệu cải thiện khả năng đọc, bảo trì và cho phép các công cụ phân tích tĩnh bắt lỗi trước khi chạy mã.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_numbers_with_hint</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Cộng hai số nguyên và trả về tổng của chúng.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">add_numbers_with_hint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kết quả là: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kết quả là: 5
+</pre></div>
+</div>
+</div>
+</div>
+<section id="tai-sao-nen-su-dung-goi-y-kieu-du-lieu">
+<h3>Tại sao nên sử dụng gợi ý kiểu dữ liệu?<a class="headerlink" href="#tai-sao-nen-su-dung-goi-y-kieu-du-lieu" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Cải thiện khả năng đọc:</strong> Giúp các nhà phát triển khác (và chính bạn trong tương lai) hiểu rõ hơn về các kiểu dữ liệu dự kiến của đầu vào và đầu ra của hàm.</p></li>
+<li><p><strong>Phát hiện lỗi sớm:</strong> Các công cụ phân tích tĩnh (như MyPy, Pyright) và IDE có thể sử dụng gợi ý kiểu dữ liệu để bắt các lỗi liên quan đến kiểu dữ liệu trước khi bạn chạy mã.</p></li>
+<li><p><strong>Tự động hoàn thành tốt hơn:</strong> Các IDE có thể cung cấp gợi ý tự động hoàn thành chính xác hơn dựa trên kiểu dữ liệu đã biết.</p></li>
+<li><p><strong>Tài liệu:</strong> Gợi ý kiểu dữ liệu đóng vai trò như một dạng tài liệu cho API của bạn.</p></li>
+</ol>
+</section>
+<section id="vi-du-nang-cao-ve-goi-y-kieu-du-lieu">
+<h3>Ví dụ nâng cao về gợi ý kiểu dữ liệu<a class="headerlink" href="#vi-du-nang-cao-ve-goi-y-kieu-du-lieu" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">process_list</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Tính tổng các phần tử trong danh sách các số nguyên.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">my_numbers</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tổng các số: </span><span class="si">{</span><span class="n">process_list</span><span class="p">(</span><span class="n">my_numbers</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_user_info</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Truy xuất thông tin người dùng theo ID.</span>
+<span class="sd">    Trả về một từ điển hoặc None nếu không tìm thấy người dùng.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">user_id</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="n">user_data</span> <span class="o">=</span> <span class="n">get_user_info</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">user_data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tên người dùng: </span><span class="si">{</span><span class="n">user_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">repeat_string</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">times</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Lặp lại một chuỗi một số lần nhất định.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">s</span> <span class="o">*</span> <span class="n">times</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">repeat_string</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">describe_tuple</span><span class="p">(</span><span class="n">tup</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mô tả một tuple với các kiểu dữ liệu cụ thể.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;String: </span><span class="si">{</span><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, Integer: </span><span class="si">{</span><span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, Float: </span><span class="si">{</span><span class="n">tup</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mf">4.56</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">describe_tuple</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">check_length</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Trả về độ dài của danh sách chứa chuỗi hoặc số nguyên.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+
+<span class="n">mixed_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Độ dài danh sách: </span><span class="si">{</span><span class="n">check_length</span><span class="p">(</span><span class="n">mixed_list</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tổng các số: 6
+Tên người dùng: Alice
+abcabcabc
+String: hello, Integer: 123, Float: 4.56
+Độ dài danh sách: 4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">repeat_string</span><span class="p">({</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;key_2&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">repeat_string</span><span class="p">({</span><span class="s1">&#39;key_1&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;key_2&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+
+<span class="nn">Cell In[27], line 24,</span> in <span class="ni">repeat_string</span><span class="nt">(s, times)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="k">def</span><span class="w"> </span><span class="nf">repeat_string</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">times</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Lặp lại một chuỗi một số lần nhất định.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">24</span>     <span class="k">return</span> <span class="n">s</span> <span class="o">*</span> <span class="n">times</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for *: &#39;dict&#39; and &#39;int&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hầu hết các IDE đều đủ thông minh để đọc gợi ý kiểu dữ liệu của bạn và cảnh báo nếu bạn đang sử dụng một kiểu dữ liệu khác trong hàm, ví dụ, ảnh chụp màn hình VScode này:</p>
+<p><img alt="" src="../_images/type_hint_1.png" />
+<img alt="" src="../_images/type_hint_2.png" /></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Hàm <code class="docutils literal notranslate"><span class="pre">range()</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cau-lenh-break-va-continue">Câu lệnh <code class="docutils literal notranslate"><span class="pre">break</span></code> và <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vong-lap-for-long-nhau">Vòng lặp <code class="docutils literal notranslate"><span class="pre">for</span></code> lồng nhau</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#vong-lap-while">2. Vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vong-lap-while-co-ban">Vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code> cơ bản</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vong-lap-vo-han">Vòng lặp vô hạn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#else-voi-vong-lap-while"><code class="docutils literal notranslate"><span class="pre">else</span></code> với vòng lặp <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bieu-thuc-tap-hop-comprehensions">3. Biểu thức tập hợp (Comprehensions)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bieu-thuc-tap-hop-danh-sach">Biểu thức tập hợp danh sách</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bieu-thuc-tap-hop-tu-dien">Biểu thức tập hợp từ điển</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bieu-thuc-tap-hop-tap-hop">Biểu thức tập hợp tập hợp</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except">4. <code class="docutils literal notranslate"><span class="pre">try</span></code> / <code class="docutils literal notranslate"><span class="pre">except</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xu-ly-ngoai-le-co-ban">Xử lý ngoại lệ cơ bản</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#else-va-finally"><code class="docutils literal notranslate"><span class="pre">else</span></code> và <code class="docutils literal notranslate"><span class="pre">finally</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ham">5. Hàm</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dinh-nghia-ham">Định nghĩa hàm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tham-so-va-doi-so">Tham số và Đối số</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doi-so-mac-dinh">Đối số mặc định</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doi-so-tu-khoa">Đối số từ khóa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doi-so-tuy-y-args-va-kwargs">Đối số tùy ý (<code class="docutils literal notranslate"><span class="pre">*args</span></code> và <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kieu-du-lieu-tra-ve">Kiểu dữ liệu trả về</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-nhu-mot-kieu-du-lieu">6. Hàm như một kiểu dữ liệu</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gan-ham-cho-bien">Gán hàm cho biến</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truyen-ham-lam-doi-so">Truyền hàm làm đối số</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tra-ve-ham-tu-mot-ham-khac">Trả về hàm từ một hàm khác</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goi-y-kieu-du-lieu-type-hinting">Gợi ý kiểu dữ liệu (Type Hinting)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tai-sao-nen-su-dung-goi-y-kieu-du-lieu">Tại sao nên sử dụng gợi ý kiểu dữ liệu?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-du-nang-cao-ve-goi-y-kieu-du-lieu">Ví dụ nâng cao về gợi ý kiểu dữ liệu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By College of Technology, National Economics University
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
