@@ -1,16 +1,16 @@
 ## Data visualization for business insights
 <hr>
 
-### Course title
+### MP Title
 
-Data Visualization for Business Insights
+Data visualization for business insights
 
 - Class contact: 15 hours  
 - Self study: 45+ hours  
 
 ---
 
-### Course aim
+### MP Aim
 
 Provide learners with foundational knowledge and practical skills in data visualization, enabling them to design, construct, and present meaningful visual insights using Power BI, SQL, and Python to support evidence-based decision-making in business and related domains.
 

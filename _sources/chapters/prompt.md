@@ -1,7 +1,7 @@
 ## Prompt engineering
 <hr>
 
-### MP title
+### MP Title
 
 Prompt engineering  
 - Class contact: 20 hours  
@@ -9,7 +9,7 @@ Prompt engineering
 
 ---
 
-### MP aim
+### MP Aim
 
 Develop practical competence in designing, refining, and applying effective prompts for generative AI systems, enabling learners to integrate AI tools into real-world workflows for communication, productivity, analysis, and strategic decision-making.
 

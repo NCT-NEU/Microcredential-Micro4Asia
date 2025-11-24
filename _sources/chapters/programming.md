@@ -1,7 +1,7 @@
 ## Python programming for data science
 <hr>
 
-### MP title
+### MP Title
 
 Python programming for data science  
 - Class contact: 15 hours  
@@ -9,7 +9,7 @@ Python programming for data science
 
 ---
 
-### MP aim
+### MP Aim
 
 Develop foundational Python programming skills for data handling and automation, with a strong focus on core programming constructs and the practical use of NumPy and Pandas for structured data manipulation.
 

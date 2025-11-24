@@ -1,7 +1,7 @@
 ## Applied machine learning in economics and business
 <hr>
 
-### MP title
+### MP Title
 
 Applied machine learning in economics and business  
 - Class contact: 15 hours  
@@ -9,7 +9,7 @@ Applied machine learning in economics and business
 
 ---
 
-### MP aim
+### MP Aim
 
 Develop practical competence in applying machine learning models to economic and business problems using Python, with emphasis on model construction, evaluation, interpretation, and decision support in real-world contexts.
 
@@ -53,7 +53,7 @@ Develop practical competence in applying machine learning models to economic and
 
 ---
 
-### Assessment methods and learners' activities
+### Assessment methods
 
 | Assessment Type | Description | Purpose |
 |----------------|-------------|----------|

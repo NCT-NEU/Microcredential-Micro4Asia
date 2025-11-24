@@ -1,7 +1,7 @@
 ## Data cleaning and preprocessing with Python
 <hr>
 
-### MP title
+### MP Title
 
 Data cleaning and preprocessing with Python  
 - Class contact: 15 hours  
@@ -9,7 +9,7 @@ Data cleaning and preprocessing with Python
 
 ---
 
-### MP aim
+### MP Aim
 
 Develop practical skills in cleaning, preparing, and transforming raw datasets into high-quality, structured data suitable for analytical and data mining tasks, using Python as the primary processing tool.
 

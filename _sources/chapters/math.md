@@ -1,13 +1,13 @@
-## Mathematical Foundations for Data Science
+## Mathematical foundations for data science
 <hr>
 
-### MP title
+### MP Title
 
-Mathematical Foundations for Data Science
+Mathematical foundations for data science
 - Class contact: 15 hours
 - Independent study: 30 hours
 
-### MP aim
+### MP Aim
 
 Apply algebra and calculus concepts to support data representation, analytical modeling, and optimization in data science contexts.
 
